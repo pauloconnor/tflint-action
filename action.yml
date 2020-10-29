@@ -1,0 +1,43 @@
+name: "TFLint GitHub Action"
+description: "Run tflint against your Terraform repositories"
+author: "Paul O'Connor"
+
+inputs:
+  tflint_path:
+    description: "The path to run TFLint against, including /github/workspace"
+    default: "/github/workspace"
+  tflint_recurse:
+    description: "Whether or not to recurse through directories"
+    default: "false"
+  tflint_changed_only:
+    description: "Run TFLint against changed files only"
+    default: "false"
+  tflint_config_file:
+    description: "Load the .tflint.hcl file in the root of the repo"
+    default: "false"
+  tflint_extra_options:
+    description: "Extra options to pass to TFLint GitHub Action"
+    default: ""
+  tflint_enabled_rules:
+    description: "Which extra rules to enable, one per line"
+    default: ""
+  tflint_disabled_rules:
+    description: "Which standard rules to disable, one per line"
+    default: ""
+  tflint_tag_lines:
+    description: "Post a message at the fail that failed, with the error message"
+    default: "false"
+  tflint_debug:
+    description: "Enable TFLint debug logs"
+    default: "false"
+outputs:
+  tflint_output:
+    description: TFLint output"
+  tflint_status:
+    description: TFLint status"
+runs:
+  using: "docker"
+  image: "./Dockerfile"
+branding:
+  icon: "terminal"
+  color: "red"
