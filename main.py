@@ -40,7 +40,6 @@ def get_file_list(changed_only, src, recurse):
         if os.environ.get("GITHUB_EVENT_NAME") == "pull_request":
             base = event_data["pull_request"]["base"]["sha"]
         elif os.environ.get("GITHUB_EVENT_NAME") == "push":
-            print(event_data)
             base = event_data["before"]
         else:
             base = ""
