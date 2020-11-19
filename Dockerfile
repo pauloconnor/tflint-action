@@ -2,7 +2,7 @@ FROM alpine:3.12
 
 LABEL version="0.0.1"
 LABEL name="tflint-action"
-LABEL repository="http://github.com/paulocnnor/tflint-action"
+LABEL repository="http://github.com/pauloconnor/tflint-action"
 LABEL homepage="http://github.com/pauloconnor/tflint-action"
 LABEL maintainer="Paul O'Connor<paul@poconnor.me>"
 
