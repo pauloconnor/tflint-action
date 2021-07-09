@@ -29,14 +29,14 @@ jobs:
         with:
             # Full git history is needed to get a proper list of changed files
             fetch-depth: 0
-      - uses: pauloconnor/tflint-action@v1
+      - uses: pauloconnor/tflint-action@v0.0.2 
         with:
             tflint_changed_only: false
             tflint_extra_options: --output json
             tflint_enabled_rules:
               terraform_required_providers
               terraform_standard_module_structure
-            tfline_disabled_rules:
+            tflint_disabled_rules:
               terraform_deprecated_interpolation
 ```
 
@@ -51,7 +51,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: TFLint
-        uses: pauloconnor/tflint-action@v1
+        uses: pauloconnor/tflint-action@v0.0.2 
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
@@ -62,7 +62,7 @@ jobs:
             tflint_enabled_rules:
               terraform_required_providers
               terraform_standard_module_structure
-            tfline_disabled_rules:
+            tflint_disabled_rules:
               terraform_deprecated_interpolation
 ```
 
